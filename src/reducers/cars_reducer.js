@@ -7,6 +7,8 @@ export default function (state = [], action) {
       return action.payload;
     case 'FETCH_CAR':
       return [action.payload];
+    case 'DESTROY_CAR':
+      return state.filter((car) => car !== action.payload);
     default:
       return state;
   }

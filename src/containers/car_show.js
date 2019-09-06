@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchCar destroyCar } from '../actions';
+import { destroyCar } from '../actions';
+import { Link, withRouter } from 'react-router-dom';
 
 class CarShow extends Component {
-  componentDidMount() {
-    if (!this.props.post) {
-      this.props.fetchCar(this.props.match.params.id);
-    }
-  }
 
   handelClick = (event) => {
-    console.log(this.props.car.id)
+    this.props.destroyCar(this.props.history, this.props.car)
   }
 
   render() {
@@ -38,7 +34,7 @@ function mapStateToProps(state, ownProps) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchCar }, dispatch);
+  return bindActionCreators({ destroyCar }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CarShow);
