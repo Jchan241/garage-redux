@@ -2,3 +2,26 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.car-item {
+  border: 1px solid #eee;
+  margin: 8px;
+  padding: 4px 8px;
+}
+
+.car-make {
+  display: flex;
+  p {
+    padding: 0 4px 0 0;
+  }
+}
+
+.inputs {
+  padding: 32px;
+  display: flex;
+  width: 320px;
+  justify-content: space-between;
+  p {
+    margin-right: 8px;
+  }
+}
